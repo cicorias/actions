@@ -27,6 +27,7 @@ outputs:
 runs:
   using: docker
   image: Dockerfile
+  pre-entrypoint: 'env|sort'
   env:
     jobOptions:JobName: ${{ inputs.job-name }}
     jobOptions:ResourceGroup: ${{ inputs.resource-group }}
